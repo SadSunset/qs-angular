@@ -1,0 +1,27 @@
+<p-card>
+  <ng-template pTemplate="header">
+    <div class="flex justify-content-between px-3">
+      <h4>{{ course.title | titlecase }}</h4>
+      <div class="flex gap-4">
+        <div>
+          <i class="pi pi-clock"></i> <span>{{ course.creationDate }}</span>
+        </div>
+        <div>
+          <i class="pi pi-calendar"></i>
+          <span>{{ course.duration }}</span>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <div class="flex gap-8 flex-wrap">
+    <div class="flex align-items-center">{{ course.description }}</div>
+    <div class="flex align-items-center gap-2">
+      <i
+        class="pi pi-pencil"
+        style="color: slateblue"
+        (click)="editCourse()"
+      ></i>
+      <i class="pi pi-trash" style="color: red" (click)="deleteCourse()"></i>
+    </div>
+  </div>
+</p-card>
